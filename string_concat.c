@@ -1,31 +1,35 @@
-#include <stdio.h>
+// String concatination
+#include <iostream>
 #include <string.h>
+using namespace std;
 
-void STR_APPEND(char str[], char text[])
+void strConcat(char *str, char *text)
 {
-    int i = strlen(str);
-    int k = 0;
+	int i = strlen(str); // Move i to last character of string
+	int j = 0;
 
-    while (text[k] != '\0')
-    {
-        str[i] = text[k];
-        i++;
-        k++;
-    }
-    str[i] = '\0';
+	while (text[j] != '\0')
+	{
+		str[i] = text[j]; // Add one by one character of text to string
+		i++;
+		j++;
+	}
+
+	str[i] = '\0'; // Add null character to last
 }
 
 int main()
 {
-    char str[100], text[100];
+	char str[20], text[20];
 
-    printf("Enter a string: ");
-    scanf("%s", &str);
-    printf("Enter a text: ");
-    scanf("%s", &text);
+	cout << "Enter the string: ";
+	gets(str); // Get string from user
 
-    STR_APPEND(str, text);
-    printf("%s", str);
+	cout << "Enter the text to add in string: ";
+	gets(text); // Get text to add into string from user
 
-    return 0;
+	strConcat(str, text);
+	puts(str); // Print string 
+
+	return 0;
 }
