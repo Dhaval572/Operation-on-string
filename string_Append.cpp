@@ -1,9 +1,9 @@
-// String concatination
+// String Append
 #include <iostream>
 #include <string.h>
 using namespace std;
 
-void strConcat(char *str, char *text)
+void strAppend(char *str, char *text)
 {
 	int i = strlen(str); // Move i to last character of string
 	int j = 0;
@@ -23,12 +23,12 @@ int main()
 	char str[20], text[20];
 
 	cout << "Enter the string: ";
-	gets(str); // Get string from user
+	gets(str); // Get string from users
 
 	cout << "Enter the text to add in string: ";
 	gets(text); // Get text to add into string from user
 
-	strConcat(str, text);
+	strAppend(str, text);
 	puts(str); // Print string 
 
 	return 0;
